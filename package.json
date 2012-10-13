@@ -1,6 +1,6 @@
 {
 	"name" :  "pakinator",
-	"version" :  "0.0.3",
+	"version" :  "0.0.5",
 	"author" :  "Sabin Marcu <sabinmarcu@gmail.com>",
 	"dependencies" :  {
 		"cliparser" :  ">=0.0.33",
@@ -14,5 +14,8 @@
 		"run-tests" :  "node node_modules/.bin/jasmine-node --coffee --noColor spec",
 		"compile" :  "node node_modules/.bin/coffee -c -o lib src",
 		"test" :  "npm run-script compile && npm run-script run-tests"
+	},
+	"bin" :  {
+		"pakinator" :  "bin/pakinator"
 	}
 }
