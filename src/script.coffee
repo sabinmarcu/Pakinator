@@ -2,7 +2,7 @@ sty     = require "sty"
 _config = require "../package.json"
 _path   = process.env.PWD
 parser  = require "cliparser"
-_args   = parser.parse process.argv, "-m": "--modify", "-d": "--delete", "-a": "--add", "-h": "--help", "-v" : "--version", "-c": "--create", "-e": "--erase"
+_args   = parser.parse process.argv, "-m": "--modify", "-d": "--delete", "-a": "--add", "-h": "--help", "-v" : "--version", "-c": "--create", "-e": "--erase", "-p": "--print"
 args    = _args.doubledash
 
 
@@ -32,6 +32,7 @@ if args['help']? then return console.log sty.red """
 			#{sty.blue sty.bold "-d, --delete"}		- #{sty.green "Delete a property"}
 			#{sty.blue sty.bold "-c, --create"}		- #{sty.green "Create a package.json"}
 			#{sty.blue sty.bold "-e, --erase"}		- #{sty.green "Erase the package.json already existent"}
+			#{sty.blue sty.bold "-p, --print"}		- #{sty.green "Print the contents of the package.json"}
 
 		For example : 
 		   pakinator --create 
@@ -45,6 +46,9 @@ if args['help']? then return console.log sty.red """
 # This is activated using -v, --version
 if args["version"]? then return console.log _config.version
 
+# Issuing the display instances
+#This is activated using -p, --print
+if args["print"]? then return console.log require "#{_path}/package.json"
 
 # Then, if we got till here, we are in the CRUD Section
 # First off, we tend to the delete and create functions related to package.json

@@ -1,6 +1,6 @@
 {
 	"name" :  "pakinator",
-	"version" :  "0.0.5",
+	"version" :  "0.1.0",
 	"author" :  "Sabin Marcu <sabinmarcu@gmail.com>",
 	"dependencies" :  {
 		"cliparser" :  ">=0.0.33",
